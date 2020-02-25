@@ -1,0 +1,14 @@
+.name{
+    font-family: Chiller, sans-serif;
+    font-size: 45px;
+    color: crimson;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: cyan;
+}
+.name:hover{
+    color:blueviolet;
+    font-size: 50px;
+    font-family:fantasy;
+}

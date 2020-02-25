@@ -1,0 +1,22 @@
+.wrap{
+    width: 227px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 55px;
+    background-color: azure;
+}
+.input{
+    font-size: 20px;
+}
+.btn{
+    margin-left: 5px;
+    padding: 5px;
+    color: yellow;
+    background-color: darkslateblue;
+
+}
+.btn:hover{
+    background-color: aqua;
+
+}

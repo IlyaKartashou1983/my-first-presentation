@@ -1,0 +1,11 @@
+.wrapper{
+    background-image: url("https://www.uptycs.com/hubfs/Nectafy/Blog/What%20Is%20Cyber%20Threat%20Hunting%3F%20%5B2019%5D.jpg");
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.container{
+    margin: 0 auto;
+    width: 80%;
+}
+
