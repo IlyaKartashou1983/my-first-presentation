@@ -1,10 +1,7 @@
 import React from 'react';
-import s from './Greeting.module.css'
+import s from './Greeting.module.css';
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-
-
-
 class Greeting extends React.Component {
     render = () => {
         return (
@@ -15,7 +12,6 @@ class Greeting extends React.Component {
         );
     }
 }
-
 export default Greeting;
 
 

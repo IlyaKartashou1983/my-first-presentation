@@ -2,7 +2,7 @@ import React from 'react';
 import s from './App.module.css';
 import Greeting from "../Greeting/Greeting";
 import MyName from "../MyName/MyName";
-import MySkills from "../MySkills/Myskills";
+import Myskills from "../MySkills/Myskills";
 import MyFriends from "../MyFriends/MyFriends";
 
 
@@ -39,7 +39,7 @@ class App extends React.Component {
                 <div className={s.container}>
                     <MyName />
                     <MyFriends names={this.state.names} />
-                    <MySkills skills={this.state.skills} />
+                    <Myskills skills={this.state.skills} />
                     <Greeting onAddClick={this.onAddClick} refNewName={this.newNameRef} />
                 </div>
             </div>

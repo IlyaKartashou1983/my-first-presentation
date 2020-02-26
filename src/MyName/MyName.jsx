@@ -1,6 +1,5 @@
 import React from 'react';
-import s from '../Greeting/Greeting.module.css'
-import a from './MyName.module.css'
+import a from './MyName.module.css';
 
 
 class MyName extends React.Component {
@@ -12,7 +11,6 @@ class MyName extends React.Component {
         );
     }
 }
-
 export default MyName;
 
 

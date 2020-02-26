@@ -1,9 +1,5 @@
 import React from 'react';
-
-
-
-class MySkill extends React.Component {
-
+class Myskill extends React.Component {
     render = () => {
         return (
             <div>
@@ -12,4 +8,4 @@ class MySkill extends React.Component {
         );
     }
 }
-export default MySkill;
+export default Myskill;
