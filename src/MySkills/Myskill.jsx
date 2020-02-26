@@ -1,4 +1,5 @@
 import React from 'react';
+
 class Myskill extends React.Component {
     render = () => {
         return (
@@ -8,4 +9,5 @@ class Myskill extends React.Component {
         );
     }
 }
+
 export default Myskill;

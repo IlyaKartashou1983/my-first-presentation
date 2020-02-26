@@ -11,6 +11,7 @@ class MyName extends React.Component {
         );
     }
 }
+
 export default MyName;
 
 

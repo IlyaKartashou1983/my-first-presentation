@@ -1,10 +1,11 @@
 import React from 'react';
 import MyFriend from "./MyFriend";
 import s from './MyFriends.module.css';
+
 class MyFriends extends React.Component {
     render = () => {
-        let myFriends = this.props.names.map((t,index) => {
-                return <MyFriend key={index}  name={t.name} />
+        let myFriends = this.props.names.map((t, index) => {
+                return <MyFriend key={index} name={t.name}/>
             }
         );
         return (
@@ -17,6 +18,7 @@ class MyFriends extends React.Component {
         );
     }
 }
+
 export default MyFriends;
 
 
