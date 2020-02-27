@@ -9,7 +9,6 @@ import MyFriends from "../MyFriends/MyFriends";
 class App extends React.Component {
     constructor(props) {
         super(props);
-        /*this.newTaskTitleRef = React.createRef();*/
         this.newNameRef = React.createRef();
     }
     state = {
@@ -24,7 +23,6 @@ class App extends React.Component {
     };
     onAddClick = () => {
         let name = this.newNameRef.current.value;
-        debugger
         let newNames = [...this.state.names, {name}];
         alert(name + " ,ну как ты там поживаешь?)))");
         this.newNameRef.current.value = '';
