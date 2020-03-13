@@ -7,14 +7,20 @@ class Greeting extends React.Component {
     render = () => {
         return (
             <div className={s.wrap}>
-                <Input refNewName={this.props.refNewName}/>
-                <Button onClick={this.props.onAddClick}/>
+                <Input
+                    onAddClick={this.props.onAddClick}
+                    onChangeInput={this.props.onChangeInput}
+                    onKeyPress ={this.props.onKeyPress}
+                    classForInput ={this.props.classForInput}
+                    title={this.props.title}
+
+
+                />
+
             </div>
         );
     }
 }
 
 export default Greeting;
-
-
 

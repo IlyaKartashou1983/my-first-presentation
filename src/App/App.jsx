@@ -1,9 +1,12 @@
 import React from 'react';
-import s from './App.module.css';
-import Greeting from "../Greeting/Greeting";
-import MyName from "../MyName/MyName";
-import Myskills from "../MySkills/Myskills";
-import MyFriends from "../MyFriends/MyFriends";
+import Navbar from "../MySkills/Navbar";
+import Monday from "../MySkills/Monday";
+import {
+    HashRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 
 class App extends React.Component {
@@ -11,6 +14,7 @@ class App extends React.Component {
         super(props);
         this.newNameRef = React.createRef();
     }
+
     state = {
         skills: [
             {mySkill: ' обаятельный '},
@@ -19,28 +23,78 @@ class App extends React.Component {
         ],
         names: [
             {name: ''}
+        ],
+        error: true,
+        classForInput: 'error',
+        title: '',
+        days: [
+            {day: 'Monday', routeData: '/monday'},
+            {day: 'Tuesday', routeData: '/tuesday'},
+            {day: 'Wednesday', routeData: '/wednesday'},
+            {day: 'Thursday', routeData: '/thursday'},
+            {day: 'Friday', routeData: '/friday'}
         ]
     };
-    onAddClick = () => {
-        let name = this.newNameRef.current.value;
-        let newNames = [...this.state.names, {name}];
-        alert(name + " ,ну как ты там поживаешь?)))");
-        this.newNameRef.current.value = '';
+    onChangeInput = (e) => {
         this.setState({
-            names: newNames
+            error: false,
+            title: e.currentTarget.value,
+            classForInput: ''
+
+
         })
     };
+    onKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            let newText = this.state.title;
+            if (newText === '') {
+                this.setState({
+                    error: true
+                })
+            } else {
+                this.onAddClick(newText)
+            }
+        }
+    }
 
+    onAddClick = (e) => {
+        let name = this.state.title;
+        let newNames = [...this.state.names, {name}];
+        if (name === '') {
+            this.setState({
+                error: true
+            })
+        } else {
+            alert(name + " ,ну как ты там поживаешь?)))")
+            this.setState({
+
+                names: newNames,
+                title: '',
+                classForInput: 'error'
+
+            })
+
+
+        }
+    }
     render = () => {
+
         return (
-            <div className={s.wrapper}>
-                <div className={s.container}>
-                    <MyName/>
-                    <MyFriends names={this.state.names}/>
-                    <Myskills skills={this.state.skills}/>
-                    <Greeting onAddClick={this.onAddClick} refNewName={this.newNameRef}/>
-                </div>
-            </div>
+            <Router>
+
+                <Navbar skills={this.state.skills} names={this.state.names} days={this.state.days}/>
+               {/* <MyFriends names={this.state.names}/>
+                <Myskills skills={this.state.skills}/>*/}
+
+             <Route path='/monday' render={()=><Monday skills={this.state.skills} names={this.state.names}
+                                                        onKeyPress ={this.onKeyPress}
+                                                        onAddClick={this.onAddClick}
+                                                        onChangeInput={this.onChangeInput}
+                                                        classForInput ={this.state.classForInput}
+                                                        title={this.state.title} />}/>
+
+
+            </Router>
         );
     }
 }
