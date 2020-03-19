@@ -4,7 +4,6 @@ import s from '../Greeting/Greeting.module.css';
 class Input extends React.Component {
 
     render = () => {
-        debugger
         return (
             <div>
                 <input className={s[this.props.classForInput]}

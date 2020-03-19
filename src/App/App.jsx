@@ -33,8 +33,18 @@ class App extends React.Component {
             {day: 'Wednesday', routeData: '/wednesday'},
             {day: 'Thursday', routeData: '/thursday'},
             {day: 'Friday', routeData: '/friday'}
-        ]
+        ],
+        color :'blue',
+        selectedDay: ''
     };
+    onAllFilterClick = (selectedDay) =>{
+        this.setState({
+            selectedDay: selectedDay
+        })
+
+    };
+
+
     onChangeInput = (e) => {
         this.setState({
             error: false,
@@ -82,16 +92,15 @@ class App extends React.Component {
         return (
             <Router>
 
-                <Navbar skills={this.state.skills} names={this.state.names} days={this.state.days}/>
-               {/* <MyFriends names={this.state.names}/>
-                <Myskills skills={this.state.skills}/>*/}
+                <Navbar color={this.state.color} onAllFilterClick={this.onAllFilterClick} days={this.state.days}/>
 
-             <Route path='/monday' render={()=><Monday skills={this.state.skills} names={this.state.names}
+                <Route path='/monday' render={()=><Monday skills={this.state.skills} names={this.state.names}
                                                         onKeyPress ={this.onKeyPress}
                                                         onAddClick={this.onAddClick}
                                                         onChangeInput={this.onChangeInput}
                                                         classForInput ={this.state.classForInput}
-                                                        title={this.state.title} />}/>
+                                                        title={this.state.title}
+                                                      />}/>
 
 
             </Router>

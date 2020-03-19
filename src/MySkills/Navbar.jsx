@@ -1,5 +1,7 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
+import './Navbar.css'
+
 
 class Navbar extends React.Component {
     state = {
@@ -7,19 +9,32 @@ class Navbar extends React.Component {
     }
     onShowFiltersClick = () => {
         this.setState({
-            isHidden : false
+            isHidden: false
         })
     }
     onHideFiltersClick = () => {
         this.setState({
-            isHidden : true
+            isHidden: true
         })
-    }
-    render = () => {
-        let daysItems = this.props.days
-            .map(d => <Link to={d.routeData}>{d.day}</Link>
 
-    );
+    }
+
+    returnActiveDay = (e) => {
+        let selectedDay = e.currentTarget.text;
+        this.props.onAllFilterClick(selectedDay)
+
+    }
+
+
+    render = () => {
+
+
+        let daysItems = this.props.days
+            .map(d => {
+                    return <NavLink activeClassName='yellow' to={d.routeData}
+                                    onClick={this.returnActiveDay}>{d.day}</NavLink>
+                }
+            );
 
 
         return (

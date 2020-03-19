@@ -4,7 +4,7 @@ import MyName from "../MyName/MyName";
 import MyFriends from "../MyFriends/MyFriends";
 import Myskills from "./Myskills";
 import Greeting from "../Greeting/Greeting";
-import s from './Monday.module.css'
+import './Monday.css';
 
 class Monday extends React.Component {
 
@@ -12,8 +12,8 @@ class Monday extends React.Component {
 
         return (
 
-            <div className={s.wrapper}>
-                <div className={s.container}>
+            <div className='wrapper'>
+                <div className='container'>
                       <MyName/>
                                 <MyFriends names={this.props.names}/>
                                 <Myskills skills={this.props.skills}/>
